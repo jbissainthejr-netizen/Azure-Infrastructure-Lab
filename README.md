@@ -227,16 +227,3 @@ This project provided hands-on experience with:
 This project helped move my Azure experience beyond certification study and into hands-on administration.
 I gained practical experience deploying and managing Azure infrastructure, securing network access, administering a Windows Server VM, configuring monitoring and logging, troubleshooting deployment issues, applying governance controls, and validating cloud storage.
 The project also reinforced the connection between Azure infrastructure, Windows administration, networking, security, and operational monitoring.
-## Screenshots
-Recommended screenshots for this repository:
-1. Resource group showing the deployed Azure resources
-2. VM overview page
-3. VM Network Security Group showing restricted RDP access
-4. Windows Server / PowerShell network verification
-5. Azure Monitor metrics
-6. Log Analytics query showing the test Windows event
-7. Azure RBAC / IAM view
-8. Resource group Delete lock
-9. VM tags
-10. Storage account networking restrictions
-11. Blob container with uploaded test file
