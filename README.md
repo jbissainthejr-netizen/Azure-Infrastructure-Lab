@@ -55,6 +55,8 @@ The lab environment included:
 - Windows Event Log Data Collection Rule: `AZ900-Windows-EventLogs-DCR`
 - Storage Account: `az900labstorage01`
 - Private Blob Storage container
+  
+![Azure Resource Group Overview](images/01-resource-group-overview.png) 
 
 ---
 
@@ -65,6 +67,8 @@ The lab environment included:
 I created the Azure environment from scratch, including the resource group, virtual network, subnet, Windows Server virtual machine, network interface, public IP address, Network Security Group, and managed operating system disk.
 
 The VM was deployed using Windows Server 2022 Datacenter: Azure Edition and connected to the lab VNet and subnet.
+
+![Azure VM Overview](images/02-vm-overview.png) 
 
 ---
 
@@ -84,10 +88,16 @@ ipconfig
 hostname
 ```
 to verify the Windows networking configuration matched the Azure configuration.
+
+![Windows Server Network Verification](images/04-windows-server-network-verification.png) 
+
 ## RDP Security Hardening
 The original RDP rule allowed TCP port 3389 from any public IP address.
 I updated the Network Security Group rule so that RDP access was only permitted from my current public IP address.
 This reduced unnecessary exposure of the VM while still allowing remote administration.
+
+![Restricted RDP NSG Rule](images/03-rdp-nsg-rule.png) 
+
 ## Monitoring and Centralized Logging
 I configured Azure Monitor to review VM performance metrics including:
 - CPU utilization
@@ -119,6 +129,9 @@ Event
 The event was successfully returned in Log Analytics.
 This validated the complete logging path:
 Windows Server VM → Windows Event Log → Azure Monitor Agent → Data Collection Rule → Log Analytics → KQL
+
+![Log Analytics KQL Validation](images/05-log-analytics-kql-validation.png) 
+
 ## Troubleshooting Experience
 VM Availability by Region
 During the initial deployment, the selected VM size was unavailable for my subscription in East US.
@@ -172,6 +185,9 @@ Security settings included:
 - Minimum TLS version 1.2
 - Microsoft-managed encryption keys
 I then created a private Blob Storage container and successfully uploaded a test text file to verify storage functionality.
+
+![Azure Storage Networking Restrictions](images/06-storage-networking.png) 
+
 ## Security Controls Implemented
 The completed environment included several security controls:
 - RDP restricted to an approved public IP
